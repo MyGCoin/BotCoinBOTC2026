@@ -158,7 +158,7 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0x00000e1bcff2e4381371b1b2158f413c7f32ec5109656130bcb980094316e99b"));
         assert(genesis.hashMerkleRoot == uint256S("0x34832b2d4966e8eea936e1bd9115c76d6c951336c074ed9f7fd46de06de971be"));
 
-        vSeeds.push_back(CDNSSeedData("walletbuilders.com", "node4.walletbuilders.com"));
+        vSeeds.push_back(CDNSSeedData("217.154.89.10", "217.154.89.10"));
         vSeeds.push_back(CDNSSeedData("botsocial.ai", "node.botsocial.ai"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,25);
