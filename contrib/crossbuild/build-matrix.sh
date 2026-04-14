@@ -41,31 +41,6 @@ Tip:
 USAGE
 }
 
-ensure_depends_sane() {
-  local files=(
-    "$ROOT_DIR/depends/config.guess"
-    "$ROOT_DIR/depends/config.sub"
-    "$ROOT_DIR/depends/gen_id"
-  )
-
-  for f in "${files[@]}"; do
-    if [ ! -e "$f" ]; then
-      echo "ERROR: missing required depends helper: $f" >&2
-      exit 1
-    fi
-  done
-
-  chmod +x "${files[@]}"
-
-  # Some Ubuntu servers are configured with core.autocrlf=true, which can break
-  # GNU make includes and shell recipes in depends.
-  if grep -q $'\r' "$ROOT_DIR/depends/Makefile"; then
-    echo "==> normalizing CRLF line endings in depends/*.mk and depends/Makefile"
-    sed -i 's/\r$//' "$ROOT_DIR/depends/Makefile"
-    find "$ROOT_DIR/depends" -maxdepth 2 -type f -name '*.mk' -print0 | xargs -0 sed -i 's/\r$//'
-  fi
-}
-
 build_target() {
   local target="$1"
   local host="$2"
@@ -81,7 +56,6 @@ build_target() {
 
   if [ "$skip_depends" -eq 0 ]; then
     echo "==> [$target] building depends"
-    ensure_depends_sane
     make -C "$ROOT_DIR/depends" -j"$MAKE_DEPENDS_JOBS" HOST="$host"
   else
     echo "==> [$target] skipping depends build"

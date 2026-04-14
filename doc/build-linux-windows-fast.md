@@ -77,24 +77,6 @@ Wichtige Flags:
 - `--skip-depends` → überspringt Dependency-Build (schneller bei normalen Code-Änderungen)
 - `--skip-package` → kein Archiv erstellen
 
-Fehlerbehebung (wichtig)
-------------------------
-
-Wenn du Fehler wie diese siehst:
-
-- `./config.guess: Permission denied`
-- `config.site.in: No such file or directory`
-- `/bin/sh: 1: Syntax error: "|" unexpected`
-
-dann ist meist die `depends`-Umgebung beschädigt (fehlendes Execute-Bit oder CRLF-Zeilenenden).
-
-Das Script behebt das jetzt automatisch vor `make -C depends`:
-
-- setzt `+x` auf `depends/config.guess`, `depends/config.sub`, `depends/gen_id`
-- normalisiert CRLF in `depends/Makefile` und `depends/*.mk`
-
-Falls dein Checkout auf einem Windows-Laufwerk liegt (WSL `/mnt/c/...`), besser in ein Linux-Dateisystem verschieben (z. B. `/home/...`), da es sonst weiterhin Build-Probleme geben kann.
-
 Tipps für Server-Austausch
 --------------------------
 
