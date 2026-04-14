@@ -36,6 +36,8 @@ Change log can be found in [CHANGELOG.md](CHANGELOG.md).
 
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
 
+For fast, repeatable cross builds (Linux + Windows, including Qt/CLI/TX/daemon), see [doc/build-linux-windows-fast.md](doc/build-linux-windows-fast.md).
+
 
 Testing
 -------
