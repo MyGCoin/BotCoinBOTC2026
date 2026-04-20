@@ -9,7 +9,7 @@ What is BotCoin?
 BotCoin is a decentralised digital currency with near-instant transaction speeds and negligible transaction fees built upon Proof of Stake 3.0 (PoSV3, BPoS) as
 introduced by the BotCoin development team.
 
-For more information about BotCoin itself, see https://botcoin.org.
+For more information about BotCoin itself, see https://botsocial.ai.
 
 What is BotCoin?
 ----------------

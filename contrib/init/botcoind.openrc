@@ -86,7 +86,7 @@ checkconfig()
 		eerror "notified of problems:"
 		eerror ""
 		eerror "ie: alertnotify=echo %%s | mail -s \"BotCoin Alert\"" \
-			"team@botcoin.org"
+			"info@botsocial.ai"
 		eerror ""
 		return 1
 	fi
